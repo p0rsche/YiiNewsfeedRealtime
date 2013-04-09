@@ -3,8 +3,7 @@
  * CurismaNewsfeedWidget class file
  *
  * @author Vladimir Gerasimov <freelancervip@gmail.com>
- * @link http://www.curisma.com
- * @copyright Copyright &copy; 2012 Curisma Inc.
+ *
  */
 
 /*
@@ -36,7 +35,7 @@ class NewsfeedWidget extends CWidget
     'port'=>'2206',
     'channels'=>array(),
     'media'=>'screen', //media type of CSS
-    'siteUrl'=>'http://curisma.com',
+    'siteUrl'=>'http://your_url',
     'history_count' => 5,
     'debug' => YII_DEBUG
   );
