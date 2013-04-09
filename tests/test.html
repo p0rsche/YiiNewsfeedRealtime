@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Test newsfeed</title>
+  <!-- <script type="text/javascript" src="/assets/js/myscript.js"></script> -->
+</head>
+<body>
+<script>
+  /**
+   * Calculates time difference between from and now.
+   *
+   * @param time From time
+   */
+  function timeDiff(time){
+    /**
+     * Corrects ending for english words
+     *
+     * @param num Number
+     * @param word The word to which is added to the end
+     *
+     * @return string Word with correct ending
+     */
+    var getEnd = function(num, word){
+      if(!word)
+        word='';
+      num = num % 100;
+      if(num == 11) return word +='s';
+      num = num % 10;
+      if(num == 1) return word;
+
+      return word += 's';
+    }
+    var now = (new Date()).getTime(),
+        from = time,
+        diff = (now - from)/1000; //time in seconds
+
+    days = Math.floor(diff/86400);
+    if(days > 0)
+      return (days + ' ' + getEnd(days, 'day') + ' ago');
+    remained_secs = diff - days*86400;
+    hours = Math.floor(remained_secs/3600);
+    if(hours > 0)
+      return (hours + ' ' + getEnd(hours, 'hour') + ' ago');
+    remained_secs2 = remained_secs - hours * 3600;
+    minutes = Math.floor(remained_secs2/60);
+    if(minutes > 0)
+      return (minutes + ' ' + getEnd(minutes, 'minute') + ' ago');
+
+    return 'moment ago';
+  }
+
+  console.log(timeDiff((new Date(2012, 3, 1, 0, 30)).getTime()));
+</script>
+</body>
+</html>
