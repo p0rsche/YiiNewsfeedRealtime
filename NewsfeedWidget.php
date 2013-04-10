@@ -1,6 +1,6 @@
 <?php
 /**
- * CurismaNewsfeedWidget class file
+ * NewsfeedWidget class file
  *
  * @author Vladimir Gerasimov <freelancervip@gmail.com>
  *
